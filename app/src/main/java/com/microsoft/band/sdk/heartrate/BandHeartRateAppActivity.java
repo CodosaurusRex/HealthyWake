@@ -43,22 +43,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.content.Context;
-import android.content.Intent;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.media.RingtoneManager;
-import android.net.Uri;
-import android.os.Bundle;
 import android.util.Log;
-import android.view.MotionEvent;
-import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
-import android.widget.TimePicker;
-import android.widget.ToggleButton;
-
-import java.io.IOException;
 
 public class BandHeartRateAppActivity extends Activity {
 
@@ -79,6 +66,7 @@ public class BandHeartRateAppActivity extends Activity {
     int init = 75;
 	boolean active = false;
     boolean initialized = false;
+    boolean timerRunning = true;
 
 	private BandHeartRateEventListener mHeartRateEventListener = new BandHeartRateEventListener() {
         @Override
@@ -100,14 +88,15 @@ public class BandHeartRateAppActivity extends Activity {
                 Log.e("init", ""+currRate);
                 Log.e("currRate",""+ currRate);
 
-            	if(currRate > 10 && active){
+            	if(currRate > 4 && active){
 					alarmOn = false;
 				}
 
                 dispHeart(currRate);
-				if (!alarmOn){
 
+				if (!alarmOn){
                     mp.stop();
+                    timerRunning = false;
 				}
 			}
         }
@@ -261,7 +250,7 @@ public class BandHeartRateAppActivity extends Activity {
 		this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-            	txtStatus.setText(string);
+                txtStatus.setText(string);
             }
         });
 	}
@@ -282,46 +271,19 @@ public class BandHeartRateAppActivity extends Activity {
 		return ConnectionState.CONNECTED == client.connect().await();
 	}
 
-
-    private void play(Context context, Uri alert) {
-        mp = MediaPlayer.create(getApplicationContext(), R.raw.tonedef);
-
-        mp.setLooping(true);
-        mp.start();
-    }
-
-    private Uri getAlarmSound() {
-        Uri alertSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
-        if (alertSound == null) {
-            alertSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-            if (alertSound == null) {
-                alertSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
+    private Runnable updateTimerThread = new Runnable(){
+        public void run() {
+            if (timerRunning) {
+                timeInMilliseconds = SystemClock.uptimeMillis() - startTime;
+                updatedTime = timeSwapBuff + timeInMilliseconds;
+                timerValue.setText("" + (updatedTime / 60000) + ":"
+                        + String.format("%02d", (int) ((updatedTime / 1000)) % 60) + ":"
+                        + String.format("%03d", (int) (updatedTime % 1000)));
+                customHandler.postDelayed(this, 0);
             }
         }
-        return alertSound;
-    }
-
-
-
-    private Runnable updateTimerThread = new Runnable() {
-
-        public void run() {
-
-            timeInMilliseconds = SystemClock.uptimeMillis() - startTime;
-
-            updatedTime = timeSwapBuff + timeInMilliseconds;
-
-            int secs = (int) (updatedTime / 1000);
-            int mins = secs / 60;
-            secs = secs % 60;
-            int milliseconds = (int) (updatedTime % 1000);
-            timerValue.setText("" + mins + ":"
-                    + String.format("%02d", secs) + ":"
-                    + String.format("%03d", milliseconds));
-            customHandler.postDelayed(this, 0);
-        }
-
     };
+
 
 
 
