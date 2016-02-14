@@ -17,4 +17,5 @@
     <string name="consent">Heart Rate Consent</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="title_activity_highscore">Highscores</string>
+    <string name="title_activity_alarm">AlarmActivity</string>
 </resources>

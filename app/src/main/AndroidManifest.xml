@@ -36,6 +36,8 @@
         <activity
             android:name=".HighscoreActivity"
             android:label="@string/title_activity_highscore"></activity>
+            android:name=".AlarmActivity"
+            android:label="@string/title_activity_alarm"></activity>
     </application>
 
 </manifest>

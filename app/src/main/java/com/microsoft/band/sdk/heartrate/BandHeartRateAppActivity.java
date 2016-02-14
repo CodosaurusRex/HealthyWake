@@ -33,6 +33,7 @@ import com.microsoft.band.sensors.HeartRateConsentListener;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.app.AlarmManager;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -51,6 +52,11 @@ import android.media.MediaPlayer;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.view.Window;
+import android.view.WindowManager;
+import android.widget.TimePicker;
+import android.widget.ToggleButton;
+
+import java.io.IOException;
 
 public class BandHeartRateAppActivity extends Activity {
 
@@ -88,7 +94,12 @@ public class BandHeartRateAppActivity extends Activity {
                     initialized = true;
                     init = event.getHeartRate();
                 }
-                currRate = init - event.getHeartRate();
+                currRate = event.getHeartRate()- init;
+                if (currRate < 0){
+                    currRate = 0;
+                }
+                Log.e("init", ""+currRate);
+                Log.e("currRate",""+ currRate);
             	if(currRate > 10 && active){
 					alarmOn = false;
 				}
@@ -111,6 +122,9 @@ public class BandHeartRateAppActivity extends Activity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+
+
+
         heart= (ImageView)findViewById(R.id.heart);
         timerValue = (TextView) findViewById(R.id.timer);
         txtStatus = (TextView) findViewById(R.id.txtStatus);
@@ -122,6 +136,7 @@ public class BandHeartRateAppActivity extends Activity {
         Typeface tf = Typeface.createFromAsset(getAssets(),
                 "fonts/Reg.ttf");
         txtStatus.setTypeface(tf);
+        timerValue.setTypeface(tf);
         btnConsent = (Button) findViewById(R.id.btnConsent);
         btnConsent.setOnClickListener(new OnClickListener() {
 			@SuppressWarnings("unchecked")
@@ -366,7 +381,7 @@ public class BandHeartRateAppActivity extends Activity {
                 //replace
                 // extension removed from the String
                 String uri = "@drawable/heart_0";
-                if (hrt == 0){
+                if (hrt < 1){
                     uri = "@drawable/heart_0";  // where myresource.png is the file
 
                 }
