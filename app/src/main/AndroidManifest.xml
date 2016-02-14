@@ -23,7 +23,7 @@
         <activity
             android:name=".BandHeartRateAppActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SplashActivity"
             android:label="@string/title_activity_splash">
@@ -31,7 +31,6 @@
         <activity
             android:name=".HighscoreActivity"
             android:label="@string/title_activity_highscore">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,7 +39,11 @@
         </activity>
         <activity
             android:name=".AlarmActivity"
-            android:label="@string/title_activity_alarm"></activity>
+            android:label="@string/title_activity_alarm" />
+        <activity
+            android:name=".CongratsActivity"
+            android:label="@string/title_activity_congrats"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

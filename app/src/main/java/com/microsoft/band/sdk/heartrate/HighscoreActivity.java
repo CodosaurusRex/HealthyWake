@@ -89,8 +89,6 @@ public class HighscoreActivity extends Activity {
     }
 
     protected void addHighscore(Context c, double highscore) {
-        //c.deleteDatabase(HighscoreDbHelper.DATABASE_NAME);
-
         HighscoreDbHelper mDbHelper = new HighscoreDbHelper(c);
 
         // Gets the data repository in write mode

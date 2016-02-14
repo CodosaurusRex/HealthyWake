@@ -31,6 +31,7 @@ import com.microsoft.band.sensors.BandHeartRateEventListener;
 import com.microsoft.band.sensors.HeartRateConsentListener;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.app.AlarmManager;
@@ -99,10 +100,15 @@ public class BandHeartRateAppActivity extends Activity {
 				}
 
                 dispHeart(currRate);
+                Intent intent = new Intent(getApplicationContext(), CongratsActivity.class);
+                intent.putExtra("Highscore", SystemClock.uptimeMillis() - startTime);
 
 				if (!alarmOn){
                     mp.stop();
                     timerRunning = false;
+                    Intent i = new Intent(getApplicationContext(), CongratsActivity.class);
+                    intent.putExtra("Highscore", SystemClock.uptimeMillis() - startTime);
+                    startActivity(i);
 				}
 			}
         }
@@ -174,8 +180,6 @@ public class BandHeartRateAppActivity extends Activity {
     }
 
     protected void addHighscore(Context c, double highscore) {
-        //c.deleteDatabase(HighscoreDbHelper.DATABASE_NAME);
-
         HighscoreDbHelper mDbHelper = new HighscoreDbHelper(c);
 
         // Gets the data repository in write mode
