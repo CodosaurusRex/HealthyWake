@@ -30,11 +30,15 @@ import com.microsoft.band.sensors.BandHeartRateEvent;
 import com.microsoft.band.sensors.BandHeartRateEventListener;
 import com.microsoft.band.sensors.HeartRateConsentListener;
 
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -43,18 +47,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Context;
-import android.content.Intent;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.MotionEvent;
-import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
-import java.io.IOException;
 
 public class BandHeartRateAppActivity extends Activity {
 
@@ -139,9 +135,54 @@ public class BandHeartRateAppActivity extends Activity {
         startTime = SystemClock.uptimeMillis();
         customHandler.postDelayed(updateTimerThread, 0);
 
-
+        addHighscore(getApplicationContext(), 10);
 
         play(this, getAlarmSound());
+    }
+
+    protected int highestColumnId(Context c) {
+        HighscoreDbHelper mDbHelper = new HighscoreDbHelper(c);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        String[] projection = {
+                HighscoreContract.HighscoreEntry._ID,
+                HighscoreContract.HighscoreEntry.COLUMN_NAME_ENTRY_INDEX,
+        };
+
+        Cursor cursor = db.query(
+                HighscoreContract.HighscoreEntry.TABLE_NAME,  // The table to query
+                projection,                               // The columns to return
+                HighscoreContract.HighscoreEntry.COLUMN_NAME_ENTRY_INDEX, // The columns for the WHERE clause
+                null,                            // The values for the WHERE clause
+                null,                                     // don't group the rows
+                null,                                     // don't filter by row groups
+                null
+        );
+
+        int highestColumnId = cursor.getCount();
+        cursor.close();
+        Log.d("Database", Integer.toString(highestColumnId));
+        return highestColumnId;
+    }
+
+    protected void addHighscore(Context c, double highscore) {
+        c.deleteDatabase(HighscoreDbHelper.DATABASE_NAME);
+
+        HighscoreDbHelper mDbHelper = new HighscoreDbHelper(c);
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+        // Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(HighscoreContract.HighscoreEntry.COLUMN_NAME_ENTRY_INDEX, highestColumnId(c));
+        values.put(HighscoreContract.HighscoreEntry.COLUMN_NAME_SCORE, highscore);
+
+        // Insert the new row, returning the primary key value of the new row
+        db.insert(
+                HighscoreContract.HighscoreEntry.TABLE_NAME,
+                null,
+                values);
     }
 	
 	@Override
