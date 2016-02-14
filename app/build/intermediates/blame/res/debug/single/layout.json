@@ -8,6 +8,14 @@
         "source": "/Users/williezhu/Desktop/projects/HealthyWake/app/src/main/res/layout/activity_main.xml"
     },
     {
+        "merged": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/build/intermediates/res/merged/debug/layout/activity_splash.xml",
+        "source": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/src/main/res/layout/activity_splash.xml"
+    },
+    {
         "merged": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
         "source": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/layout/activity_main.xml"
     }

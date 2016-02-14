@@ -1,11 +1,19 @@
 [
     {
-        "merged": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/build/intermediates/res/merged/debug/drawable/heart_5.png",
-        "source": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/drawable/heart_5.png"
+        "merged": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/build/intermediates/res/merged/debug/drawable/heart_full.png",
+        "source": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/src/main/res/drawable/heart_full.png"
     },
     {
         "merged": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/build/intermediates/res/merged/debug/drawable/heart_4.png",
         "source": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/drawable/heart_4.png"
+    },
+    {
+        "merged": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/build/intermediates/res/merged/debug/drawable/heart_5.png",
+        "source": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/drawable/heart_5.png"
+    },
+    {
+        "merged": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/build/intermediates/res/merged/debug/drawable/heart_1.png",
+        "source": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/src/main/res/drawable/heart_1.png"
     },
     {
         "merged": "/Users/williezhu/Desktop/projects/HealthyWake/app/build/intermediates/res/merged/debug/drawable/heart_4.png",
@@ -28,8 +36,16 @@
         "source": "/Users/williezhu/Desktop/projects/HealthyWake/app/src/main/res/drawable/heart_1.png"
     },
     {
+        "merged": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/build/intermediates/res/merged/debug/drawable/heart_0.png",
+        "source": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/src/main/res/drawable/heart_0.png"
+    },
+    {
         "merged": "/Users/williezhu/Desktop/projects/HealthyWake/app/build/intermediates/res/merged/debug/drawable/heart_full.png",
         "source": "/Users/williezhu/Desktop/projects/HealthyWake/app/src/main/res/drawable/heart_full.png"
+    },
+    {
+        "merged": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/build/intermediates/res/merged/debug/drawable/heart_3.png",
+        "source": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/src/main/res/drawable/heart_3.png"
     },
     {
         "merged": "/Users/williezhu/Desktop/projects/HealthyWake/app/build/intermediates/res/merged/debug/drawable/heart_0.png",
@@ -44,15 +60,27 @@
         "source": "/Users/williezhu/Desktop/projects/HealthyWake/app/src/main/res/drawable/heart_3.png"
     },
     {
-        "merged": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/build/intermediates/res/merged/debug/drawable/heart_full.png",
-        "source": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/drawable/heart_full.png"
+        "merged": "/Users/williezhu/Desktop/projects/HealthyWake/app/build/intermediates/res/merged/debug/drawable/heart_5.png",
+        "source": "/Users/williezhu/Desktop/projects/HealthyWake/app/src/main/res/drawable/heart_5.png"
+    },
+    {
+        "merged": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/build/intermediates/res/merged/debug/drawable/heart_4.png",
+        "source": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/src/main/res/drawable/heart_4.png"
+    },
+    {
+        "merged": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/build/intermediates/res/merged/debug/drawable/heart_2.png",
+        "source": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/src/main/res/drawable/heart_2.png"
     },
     {
         "merged": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/build/intermediates/res/merged/debug/drawable/heart_1.png",
         "source": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/drawable/heart_1.png"
     },
     {
-        "merged": "/Users/williezhu/Desktop/projects/HealthyWake/app/build/intermediates/res/merged/debug/drawable/heart_5.png",
-        "source": "/Users/williezhu/Desktop/projects/HealthyWake/app/src/main/res/drawable/heart_5.png"
+        "merged": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/build/intermediates/res/merged/debug/drawable/heart_full.png",
+        "source": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/drawable/heart_full.png"
+    },
+    {
+        "merged": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/build/intermediates/res/merged/debug/drawable/heart_5.png",
+        "source": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/src/main/res/drawable/heart_5.png"
     }
 ]

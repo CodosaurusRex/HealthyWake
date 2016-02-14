@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/build/intermediates/res/merged/debug/menu/main.xml",
+        "source": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/src/main/res/menu/main.xml"
+    },
+    {
         "merged": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/build/intermediates/res/merged/debug/menu/main.xml",
         "source": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/menu/main.xml"
     },

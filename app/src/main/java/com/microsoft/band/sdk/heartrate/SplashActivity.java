@@ -9,11 +9,21 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
+import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class SplashActivity extends Activity {
     private PendingIntent pi;
     private AlarmManager am;
+
+    AlarmManager alarmManager;
+    private PendingIntent pendingIntent;
+    private TimePicker alarmTimePicker;
+    private static AlarmActivity inst;
+    private TextView alarmTextView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +37,12 @@ public class SplashActivity extends Activity {
         Log.d(Long.toString(System.currentTimeMillis()), Long.toString(alarmClockInfo.getTriggerTime()));
         setup();
         am.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 9000, pi);
+
+        setContentView(R.layout.activity_splash);
+        alarmTimePicker = (TimePicker) findViewById(R.id.alarmTimePicker);
+        alarmTextView = (TextView) findViewById(R.id.alarmText);
+        ToggleButton alarmToggle = (ToggleButton) findViewById(R.id.alarmToggle);
+        alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
     }
 
     private void setup() {

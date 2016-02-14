@@ -1,7 +1,15 @@
 [
     {
+        "merged": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/build/intermediates/res/merged/debug/raw/tonedef.mp3",
+        "source": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/src/main/res/raw/tonedef.mp3"
+    },
+    {
         "merged": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/build/intermediates/res/merged/debug/raw/tonedef.mp3",
         "source": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/raw/tonedef.mp3"
+    },
+    {
+        "merged": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/build/intermediates/res/merged/debug/raw/tone.mp3",
+        "source": "/Users/chennosaurus/AndroidStudioProjects/HealthyWake/app/src/main/res/raw/tone.mp3"
     },
     {
         "merged": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/build/intermediates/res/merged/debug/raw/tone.mp3",
