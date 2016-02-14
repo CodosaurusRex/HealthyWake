@@ -108,7 +108,10 @@ public class BandHeartRateAppActivity extends Activity {
 
 
                 dispHeart(currRate);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4b8ed1832a1cb4beaed53f539e315cb85ce05d9e
 				if (alarmOn){
 
 				}
