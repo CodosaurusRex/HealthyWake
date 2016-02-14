@@ -13,6 +13,7 @@
         4. Press the Start button\n
         5. Data from the heart rate sensor should be displayed.</string>
     <string name="start">Start</string>
-    
+
     <string name="consent">Heart Rate Consent</string>
+    <string name="title_activity_splash">SplashActivity</string>
 </resources>

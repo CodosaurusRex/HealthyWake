@@ -15,6 +15,7 @@
         yes on the dialog that pops up.\n
         4. Press the Start button\n
         5. Data from the heart rate sensor should be displayed.</string>
+    <string name="title_activity_splash">SplashActivity</string>
     <style name="AppBaseTheme" parent="@android:style/Theme.Holo.Light">
         <!--
             Theme customizations available in newer API levels can go in

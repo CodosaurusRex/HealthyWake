@@ -36,6 +36,7 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int activity_splash=0x7f030001;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -50,6 +51,7 @@ public final class R {
         public static final int consent=0x7f080002;
         public static final int start=0x7f080003;
         public static final int steps=0x7f080004;
+        public static final int title_activity_splash=0x7f080005;
     }
     public static final class style {
         /**  API 11 theme customizations can go here. 

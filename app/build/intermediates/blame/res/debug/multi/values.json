@@ -1,5 +1,152 @@
 [
     {
+        "outputFile": "/Users/williezhu/Desktop/projects/HealthyWake/app/build/intermediates/res/merged/debug/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 39,
+                    "endOffset": 90
+                },
+                "from": {
+                    "file": "/Users/williezhu/Desktop/projects/HealthyWake/app/src/main/res/values/colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 95,
+                    "endColumn": 57,
+                    "endOffset": 148
+                },
+                "from": {
+                    "file": "/Users/williezhu/Desktop/projects/HealthyWake/app/src/main/res/values/dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 153,
+                    "endColumn": 55,
+                    "endOffset": 204
+                },
+                "from": {
+                    "file": "/Users/williezhu/Desktop/projects/HealthyWake/app/src/main/res/values/dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 209,
+                    "endColumn": 52,
+                    "endOffset": 257
+                },
+                "from": {
+                    "file": "/Users/williezhu/Desktop/projects/HealthyWake/app/src/main/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 262,
+                    "endColumn": 59,
+                    "endOffset": 317
+                },
+                "from": {
+                    "file": "/Users/williezhu/Desktop/projects/HealthyWake/app/src/main/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 322,
+                    "endColumn": 54,
+                    "endOffset": 372
+                },
+                "from": {
+                    "file": "/Users/williezhu/Desktop/projects/HealthyWake/app/src/main/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 377,
+                    "endColumn": 39,
+                    "endOffset": 412
+                },
+                "from": {
+                    "file": "/Users/williezhu/Desktop/projects/HealthyWake/app/src/main/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 417,
+                    "endLine": 16,
+                    "endColumn": 72,
+                    "endOffset": 852
+                },
+                "from": {
+                    "file": "/Users/williezhu/Desktop/projects/HealthyWake/app/src/main/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 857,
+                    "endColumn": 64,
+                    "endOffset": 917
+                },
+                "from": {
+                    "file": "/Users/williezhu/Desktop/projects/HealthyWake/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 710,
+                        "endColumn": 64,
+                        "endOffset": 770
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 922,
+                    "endLine": 24,
+                    "endColumn": 12,
+                    "endOffset": 1220
+                },
+                "from": {
+                    "file": "/Users/williezhu/Desktop/projects/HealthyWake/app/src/main/res/values/styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 1225,
+                    "endLine": 27,
+                    "endColumn": 12,
+                    "endOffset": 1380
+                },
+                "from": {
+                    "file": "/Users/williezhu/Desktop/projects/HealthyWake/app/src/main/res/values/styles.xml"
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/build/intermediates/res/merged/debug/values/values.xml",
         "map": [
             {
