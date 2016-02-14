@@ -7,17 +7,17 @@
                     "startLine": 2,
                     "startColumn": 4,
                     "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
+                    "endColumn": 39,
+                    "endOffset": 90
                 },
                 "from": {
-                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/dimens.xml",
+                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/colors.xml",
                     "position": {
-                        "startLine": 3,
+                        "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 92,
-                        "endColumn": 57,
-                        "endOffset": 145
+                        "startOffset": 55,
+                        "endColumn": 39,
+                        "endOffset": 90
                     }
                 }
             },
@@ -25,95 +25,60 @@
                 "to": {
                     "startLine": 3,
                     "startColumn": 4,
-                    "startOffset": 113,
-                    "endColumn": 55,
-                    "endOffset": 164
+                    "startOffset": 95,
+                    "endColumn": 57,
+                    "endOffset": 148
                 },
                 "from": {
-                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 151,
-                        "endColumn": 55,
-                        "endOffset": 202
-                    }
+                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/dimens.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 4,
                     "startColumn": 4,
-                    "startOffset": 169,
-                    "endColumn": 52,
-                    "endOffset": 217
+                    "startOffset": 153,
+                    "endColumn": 55,
+                    "endOffset": 204
                 },
                 "from": {
-                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 119,
-                        "endColumn": 52,
-                        "endOffset": 167
-                    }
+                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/dimens.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 5,
                     "startColumn": 4,
-                    "startOffset": 222,
-                    "endColumn": 59,
-                    "endOffset": 277
+                    "startOffset": 209,
+                    "endColumn": 52,
+                    "endOffset": 257
                 },
                 "from": {
-                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 58,
-                        "endColumn": 59,
-                        "endOffset": 113
-                    }
+                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 6,
                     "startColumn": 4,
-                    "startOffset": 282,
-                    "endColumn": 54,
-                    "endOffset": 332
+                    "startOffset": 262,
+                    "endColumn": 59,
+                    "endOffset": 317
                 },
                 "from": {
-                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 663,
-                        "endColumn": 54,
-                        "endOffset": 713
-                    }
+                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 7,
                     "startColumn": 4,
-                    "startOffset": 337,
-                    "endColumn": 39,
+                    "startOffset": 322,
+                    "endColumn": 54,
                     "endOffset": 372
                 },
                 "from": {
-                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 618,
-                        "endColumn": 39,
-                        "endOffset": 653
-                    }
+                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -121,62 +86,50 @@
                     "startLine": 8,
                     "startColumn": 4,
                     "startOffset": 377,
-                    "endLine": 15,
+                    "endColumn": 39,
+                    "endOffset": 412
+                },
+                "from": {
+                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 417,
+                    "endLine": 16,
                     "endColumn": 72,
-                    "endOffset": 812
+                    "endOffset": 852
                 },
                 "from": {
-                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 178,
-                        "endLine": 13,
-                        "endColumn": 72,
-                        "endOffset": 613
-                    }
+                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/strings.xml"
                 }
             },
             {
                 "to": {
-                    "startLine": 16,
+                    "startLine": 17,
                     "startColumn": 4,
-                    "startOffset": 817,
-                    "endLine": 22,
+                    "startOffset": 857,
+                    "endLine": 23,
                     "endColumn": 12,
-                    "endOffset": 1115
+                    "endOffset": 1155
                 },
                 "from": {
-                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/styles.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 191,
-                        "endLine": 12,
-                        "endColumn": 12,
-                        "endOffset": 493
-                    }
+                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/styles.xml"
                 }
             },
             {
                 "to": {
-                    "startLine": 23,
+                    "startLine": 24,
                     "startColumn": 4,
-                    "startOffset": 1120,
-                    "endLine": 25,
+                    "startOffset": 1160,
+                    "endLine": 26,
                     "endColumn": 12,
-                    "endOffset": 1275
+                    "endOffset": 1315
                 },
                 "from": {
-                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/styles.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 534,
-                        "endLine": 17,
-                        "endColumn": 12,
-                        "endOffset": 691
-                    }
+                    "file": "/Users/chennosaurus/AndroidStudioProjects/BandHeartRateApp/app/src/main/res/values/styles.xml"
                 }
             }
         ]

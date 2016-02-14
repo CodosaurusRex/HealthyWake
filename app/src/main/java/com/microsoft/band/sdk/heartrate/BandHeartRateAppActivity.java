@@ -30,12 +30,17 @@ import com.microsoft.band.sensors.BandHeartRateEvent;
 import com.microsoft.band.sensors.BandHeartRateEventListener;
 import com.microsoft.band.sensors.HeartRateConsentListener;
 
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.view.View;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Context;
 import android.content.Intent;
@@ -56,20 +61,45 @@ public class BandHeartRateAppActivity extends Activity {
 	private BandClient client = null;
 	private Button btnConsent;
 	private TextView txtStatus;
+    private ImageView heart;
     private TextView alarmStatus;
 	private boolean alarmOn = true;
     private MediaPlayer mp;
-	
+
+    private TextView timerValue;
+
+    private long startTime = 0L;
+
+    private Handler customHandler = new Handler();
+
+    long timeInMilliseconds = 0L;
+    long timeSwapBuff = 0L;
+    long updatedTime = 0L;
+    int currRate;
+    int init = 75;
+	boolean active = false;
+    boolean initialized = false;
+
 	private BandHeartRateEventListener mHeartRateEventListener = new BandHeartRateEventListener() {
         @Override
         public void onBandHeartRateChanged(final BandHeartRateEvent event) {
             if (event != null) {
             	appendToUI(String.format("Heart Rate = %d beats per minute\n"
-            			+ "Quality = %s\n", event.getHeartRate(), event.getQuality()));
-            	if(event.getHeartRate() > 85){
+                        + "Quality = %s\n", event.getHeartRate(), event.getQuality()));
+
+                if (event.getQuality().toString().equals("LOCKED") && initialized != true){
+                    active = true;
+                    initialized = true;
+                    init = event.getHeartRate();
+                }
+                currRate = init - event.getHeartRate();
+            	if(currRate > 10 && active){
 					alarmOn = false;
 				}
 
+
+                dispHeart(currRate);
+/*
 				if (alarmOn){
 					appendToAlarmStatus(String.format("Alarm is ringing!"));
 
@@ -78,7 +108,7 @@ public class BandHeartRateAppActivity extends Activity {
 					appendToAlarmStatus(String.format("Alarm just turned off!"));
                     mp.stop();
 				}
-
+*/
 
 			}
         }
@@ -87,15 +117,19 @@ public class BandHeartRateAppActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-
+        heart= (ImageView)findViewById(R.id.heart);
+        timerValue = (TextView) findViewById(R.id.timer);
         txtStatus = (TextView) findViewById(R.id.txtStatus);
-        alarmStatus = (TextView) findViewById(R.id.alarmStatus);
+        //alarmStatus = (TextView) findViewById(R.id.alarmStatus);
         txtStatus.setText("");
         new HeartRateSubscriptionTask().execute();
         
         final WeakReference<Activity> reference = new WeakReference<Activity>(this);
-        
+        Typeface tf = Typeface.createFromAsset(getAssets(),
+                "fonts/Reg.ttf");
+        txtStatus.setTypeface(tf);
         btnConsent = (Button) findViewById(R.id.btnConsent);
         btnConsent.setOnClickListener(new OnClickListener() {
 			@SuppressWarnings("unchecked")
@@ -104,6 +138,11 @@ public class BandHeartRateAppActivity extends Activity {
 				new HeartRateConsentTask().execute(reference);
 			}
 		});
+
+
+        startTime = SystemClock.uptimeMillis();
+        customHandler.postDelayed(updateTimerThread, 0);
+
 
 
         play(this, getAlarmSound());
@@ -223,15 +262,6 @@ public class BandHeartRateAppActivity extends Activity {
             }
         });
 	}
-
-    private void appendToAlarmStatus(final String string) {
-        this.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                alarmStatus.setText(string);
-            }
-        });
-    }
     
 	private boolean getConnectedBandClient() throws InterruptedException, BandException {
 		if (client == null) {
@@ -251,17 +281,7 @@ public class BandHeartRateAppActivity extends Activity {
 
 
     private void play(Context context, Uri alert) {
-        /*player = new MediaPlayer();
-        try {
-            player.setDataSource(context, alert);
-            final AudioManager audio = (AudioManager) context
-                    .getSystemService(Context.AUDIO_SERVICE);
-            if (audio.getStreamVolume(AudioManager.STREAM_ALARM) != 0) {
-                player.setAudioStreamType(AudioManager.STREAM_ALARM);
-                player.prepare();
-                player.start();
-            }*/
-        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.tonedef);
+        mp = MediaPlayer.create(getApplicationContext(), R.raw.tonedef);
 
         mp.setLooping(true);
         mp.start();
@@ -276,6 +296,69 @@ public class BandHeartRateAppActivity extends Activity {
             }
         }
         return alertSound;
+    }
+
+
+
+    private Runnable updateTimerThread = new Runnable() {
+
+        public void run() {
+
+            timeInMilliseconds = SystemClock.uptimeMillis() - startTime;
+
+            updatedTime = timeSwapBuff + timeInMilliseconds;
+
+            int secs = (int) (updatedTime / 1000);
+            int mins = secs / 60;
+            secs = secs % 60;
+            int milliseconds = (int) (updatedTime % 1000);
+            timerValue.setText("" + mins + ":"
+                    + String.format("%02d", secs) + ":"
+                    + String.format("%03d", milliseconds));
+            customHandler.postDelayed(this, 0);
+        }
+
+    };
+
+
+
+    private void dispHeart(final int hrt) {
+        this.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                //replace
+                // extension removed from the String
+                String uri = "@drawable/heart_0";
+                if (hrt == 0){
+                    uri = "@drawable/heart_0";  // where myresource.png is the file
+
+                }
+                else if (hrt < 3){
+                    uri = "@drawable/heart_1";  // where myresource.png is the file
+
+                }
+                else if (hrt < 4) {
+                    uri = "@drawable/heart_2";  // where myresource.png is the file
+                }
+                else if (hrt < 5){
+                    uri = "@drawable/heart_3";  // where myresource.png is the file
+
+                }
+                else if (hrt < 7){
+                    uri = "@drawable/heart_4";
+
+                }
+                else if (hrt < 9){
+                    uri = "@drawable/heart_5";
+                }
+                else{
+                    uri = "@drawable/heart_full";
+                }
+                int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+                Drawable res = getResources().getDrawable(imageResource);
+                heart.setImageDrawable(res);
+            }
+        });
     }
 
 }
