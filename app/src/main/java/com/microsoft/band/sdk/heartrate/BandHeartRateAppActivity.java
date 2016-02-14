@@ -145,7 +145,7 @@ public class BandHeartRateAppActivity extends Activity {
         startTime = SystemClock.uptimeMillis();
         customHandler.postDelayed(updateTimerThread, 0);
 
-        addHighscore(getApplicationContext(), 10);
+        addHighscore(getApplicationContext(), highestColumnId(getApplicationContext()));
     }
 
     protected int highestColumnId(Context c) {
@@ -174,7 +174,7 @@ public class BandHeartRateAppActivity extends Activity {
     }
 
     protected void addHighscore(Context c, double highscore) {
-        c.deleteDatabase(HighscoreDbHelper.DATABASE_NAME);
+        //c.deleteDatabase(HighscoreDbHelper.DATABASE_NAME);
 
         HighscoreDbHelper mDbHelper = new HighscoreDbHelper(c);
 

@@ -27,6 +27,11 @@
         <activity
             android:name=".SplashActivity"
             android:label="@string/title_activity_splash">
+        </activity>
+        <activity
+            android:name=".HighscoreActivity"
+            android:label="@string/title_activity_highscore">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,8 +39,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HighscoreActivity"
-            android:label="@string/title_activity_highscore"></activity>
             android:name=".AlarmActivity"
             android:label="@string/title_activity_alarm"></activity>
     </application>
