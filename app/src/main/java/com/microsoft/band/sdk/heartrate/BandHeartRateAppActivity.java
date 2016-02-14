@@ -68,6 +68,8 @@ public class BandHeartRateAppActivity extends Activity {
     boolean initialized = false;
     boolean timerRunning = true;
 
+    final int THRESHOLD = 10;
+
 	private BandHeartRateEventListener mHeartRateEventListener = new BandHeartRateEventListener() {
         @Override
         public void onBandHeartRateChanged(final BandHeartRateEvent event) {
@@ -88,7 +90,7 @@ public class BandHeartRateAppActivity extends Activity {
                 Log.e("init", ""+currRate);
                 Log.e("currRate",""+ currRate);
 
-            	if(currRate > 4 && active){
+            	if(currRate > THRESHOLD && active){
 					alarmOn = false;
 				}
 
