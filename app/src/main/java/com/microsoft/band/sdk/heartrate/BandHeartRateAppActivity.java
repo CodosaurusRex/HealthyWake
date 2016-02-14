@@ -64,14 +64,10 @@ public class BandHeartRateAppActivity extends Activity {
     private ImageView heart;
     private TextView alarmStatus;
 	private boolean alarmOn = true;
-    private MediaPlayer mp;
-
+    private MediaPlayer mp = new MediaPlayer();
     private TextView timerValue;
-
     private long startTime = 0L;
-
     private Handler customHandler = new Handler();
-
     long timeInMilliseconds = 0L;
     long timeSwapBuff = 0L;
     long updatedTime = 0L;
@@ -92,20 +88,16 @@ public class BandHeartRateAppActivity extends Activity {
                     initialized = true;
                     init = event.getHeartRate();
                 }
+
                 currRate = init - event.getHeartRate();
             	if(currRate > 10 && active){
 					alarmOn = false;
 				}
 
-
                 dispHeart(currRate);
-				if (alarmOn){
-
-				}
-				else {
+				if (!alarmOn){
                     mp.stop();
 				}
-
 			}
         }
     };
@@ -128,20 +120,20 @@ public class BandHeartRateAppActivity extends Activity {
         txtStatus.setTypeface(tf);
         btnConsent = (Button) findViewById(R.id.btnConsent);
         btnConsent.setOnClickListener(new OnClickListener() {
-			@SuppressWarnings("unchecked")
+            @SuppressWarnings("unchecked")
             @Override
-			public void onClick(View v) {
-				new HeartRateConsentTask().execute(reference);
-			}
-		});
+            public void onClick(View v) {
+                new HeartRateConsentTask().execute(reference);
+            }
+        });
 
+        mp.reset();
+        mp = mp.create(this, R.raw.tonedef);
+        mp.setLooping(true);
+        mp.start();
 
         startTime = SystemClock.uptimeMillis();
         customHandler.postDelayed(updateTimerThread, 0);
-
-
-
-        play(this, getAlarmSound());
     }
 	
 	@Override
