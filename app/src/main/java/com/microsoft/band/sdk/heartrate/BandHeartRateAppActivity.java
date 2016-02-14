@@ -99,16 +99,12 @@ public class BandHeartRateAppActivity extends Activity {
 
 
                 dispHeart(currRate);
-/*
 				if (alarmOn){
-					appendToAlarmStatus(String.format("Alarm is ringing!"));
 
 				}
 				else {
-					appendToAlarmStatus(String.format("Alarm just turned off!"));
                     mp.stop();
 				}
-*/
 
 			}
         }
